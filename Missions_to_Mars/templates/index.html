@@ -38,11 +38,19 @@
 
         </div>
 
-        <!-- Set up Latest Mars News -->
-        <div class="row" id="content">
-            <div class="col-md-4">
-            </div>
-        </div>
+        <!-- write a for loop that displays the high res hemisphere images. -->
+        {% for image in hemisphere_image_urls %}
+        <span class="col-lg-4">
+            <span class="card" style="width: 20rem;">
+                <span class="card-body">
+                  <h4 class="card-title">{{ url.title }}</h4>
+                  <!-- <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.cost }}</h6>
+                  <p class="card-text">Potential Revenue: {{ item.cost * item.stock}}</p> -->
+                </span>
+            </span>
+        </span>
+        {% endfor %}
+        
     </div>
 
 </body>
