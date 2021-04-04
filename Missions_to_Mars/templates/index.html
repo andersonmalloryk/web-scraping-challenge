@@ -20,32 +20,31 @@
         <!-- Set up Latest Mars News -->
         <div class="row" id="content">
             <div class="col-md-8">
-                <h4 class="heading">{{XXX.titles}} </h4>
-                <p>{{XXX.paragraphs}}</p>
+                <h4 class="heading">{{features.featured_title}} </h4>
+                <p>{{features.featured_paragraph}}</p>
             </div>
 
             <!-- Set up Featured Image -->
             <div class="col-md-8">
-                <h4 class="heading">{{XXX.titles}} </h4>
-                <p>{{XXX.featured_image}}</p>
+                <h4 class="heading">Featured Image </h4>
+                <p>{{features.featured_image}}</p>
             </div>
 
             <!-- Set up Mars Facts Table -->
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
                 <h4 class="heading">{{XXX.titles}} </h4>
                 <p>{{XXX.featured_image}}</p>
-            </div>
+            </div> -->
 
         </div>
 
         <!-- write a for loop that displays the high res hemisphere images. -->
-        {% for image in hemisphere_image_urls %}
+        {% for image in features %}
         <span class="col-lg-4">
             <span class="card" style="width: 20rem;">
                 <span class="card-body">
-                  <h4 class="card-title">{{ url.title }}</h4>
-                  <!-- <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.cost }}</h6>
-                  <p class="card-text">Potential Revenue: {{ item.cost * item.stock}}</p> -->
+                  <h4 class="card-title">{{ features.hemisphere_title }}</h4>
+                  <img>{{features.hemisphere.image}}</img>
                 </span>
             </span>
         </span>
