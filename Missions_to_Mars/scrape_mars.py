@@ -114,7 +114,8 @@ def scrape_info():
                     "featured_paragraph": featured_paragraph,
                     "featured_image": featured_image_url,
                     "hemisphere_title": enhanced_titles,
-                    "hemisphere_images": image_urls}
+                    "hemisphere_images": image_urls,
+                    "mars_facts": facts_html_table}
     
     return scrape_content
 

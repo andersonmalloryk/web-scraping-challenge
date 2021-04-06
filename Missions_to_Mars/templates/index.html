@@ -11,12 +11,12 @@
 
 <body>
     <div class="container">
-
+    
         <div class="jumbotron text-center">
             <h1>Mission to Mars</h1>
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
-
+    
         <!-- Set up Latest Mars News -->
         <div class="row" id="content">
             <div class="col-md-12">
@@ -25,26 +25,45 @@
                 <p>{{features.featured_paragraph}}</p>
             </div>
         </div>
-            <!-- Set up Featured Image -->
+    
+        <!-- Set up Featured Image -->
         <div class="row" id="content">
             <div class="col-md-8">
                 <h2 class="heading">Featured Image</h2>
                 <a target="_blank" href={{features.featured_image}}>
-                    <img src={{features.featured_image}} alt="Mars Image"/>
+                    <img src={{features.featured_image}} alt="Mars Image" />
                 </a>
-                <h4 class = "heading">Mars Facts</h4>
-            </div> 
-        </div>
-
-          <!-- write a for loop that displays the high res hemisphere images. -->
-          {% for image in features.hemisphere_image %}
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src= {{image}} alt={{features.hemisphere_title}}>
-            <div class="card-body">
-              <h5 class="card-title"> {{features.hemisphere_title}} </h5>
             </div>
-          </div>
-          {% endfor %}      
+    
+        <div class="col-md-4"></div>
+            <div class="row" id="mars-facts">
+                <h2 class="heading"> Mars Facts </h2>
+                    {{ features.mars_facts | safe }}
+            </div>
+        </div>
+    </div>
+    
+        <!-- write a for loop that displays the high res hemisphere images. -->
+    
+    <span class="row" style="width: 18rem;">
+        {% for image in features.hemisphere_images %}
+    
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="{{ image }}" alt={{features.hemisphere_title}}>
+            </div>
+        </div>
+    
+        {% endfor %}
+    </span>
+    
+    <span class="row">
+        {% for title in features.hemisphere_title %}
+        <div class="col-md-3">
+            <h4 class="caption"> {{ title }} </h4>
+        </div>
+        {% endfor %}
+    </span>
 
 </body>
 
