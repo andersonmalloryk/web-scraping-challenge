@@ -19,38 +19,32 @@
 
         <!-- Set up Latest Mars News -->
         <div class="row" id="content">
-            <div class="col-md-8">
+            <div class="col-md-12">
+                <h2>Latest Mars News</h2>
                 <h4 class="heading">{{features.featured_title}} </h4>
                 <p>{{features.featured_paragraph}}</p>
             </div>
-
+        </div>
             <!-- Set up Featured Image -->
+        <div class="row" id="content">
             <div class="col-md-8">
-                <h4 class="heading">Featured Image </h4>
-                <p>{{features.featured_image}}</p>
-            </div>
-
-            <!-- Set up Mars Facts Table -->
-            <!-- <div class="col-md-4">
-                <h4 class="heading">{{XXX.titles}} </h4>
-                <p>{{XXX.featured_image}}</p>
-            </div> -->
-
+                <h2 class="heading">Featured Image</h2>
+                <a target="_blank" href={{features.featured_image}}>
+                    <img src={{features.featured_image}} alt="Mars Image"/>
+                </a>
+                <h4 class = "heading">Mars Facts</h4>
+            </div> 
         </div>
 
-        <!-- write a for loop that displays the high res hemisphere images. -->
-        {% for image in features %}
-        <span class="col-lg-4">
-            <span class="card" style="width: 20rem;">
-                <span class="card-body">
-                  <h4 class="card-title">{{ features.hemisphere_title }}</h4>
-                  <img>{{features.hemisphere.image}}</img>
-                </span>
-            </span>
-        </span>
-        {% endfor %}
-        
-    </div>
+          <!-- write a for loop that displays the high res hemisphere images. -->
+          {% for image in features.hemisphere_image %}
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src= {{image}} alt={{features.hemisphere_title}}>
+            <div class="card-body">
+              <h5 class="card-title"> {{features.hemisphere_title}} </h5>
+            </div>
+          </div>
+          {% endfor %}      
 
 </body>
 
