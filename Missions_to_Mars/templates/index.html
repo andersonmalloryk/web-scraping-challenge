@@ -39,32 +39,38 @@
             <div class="row" id="mars-facts">
                 <h2 class="heading"> Mars Facts </h2>
                     {{ features.mars_facts | safe }}
-            </div>
-        </div>
-    </div>
-    
-        <!-- write a for loop that displays the high res hemisphere images. -->
-    
-    <span class="row" style="width: 18rem;">
-        {% for image in features.hemisphere_images %}
-    
-        <div class="col-md-3">
-            <div class="thumbnail">
-                <img src="{{ image }}" alt={{features.hemisphere_title}}>
-            </div>
-        </div>
-    
-        {% endfor %}
-    </span>
-    
-    <span class="row">
-        {% for title in features.hemisphere_title %}
-        <div class="col-md-3">
-            <h4 class="caption"> {{ title }} </h4>
-        </div>
-        {% endfor %}
-    </span>
 
+            </div>
+        </div>
+
+    <!-- write a for loop that displays the high res hemisphere images. -->
+       
+        <div class="col-md-12 text-center">
+            <h2>Mars Hemispheres</h2>
+        </div>
+ 
+        <span class="row" style="width: 18rem;">
+ 
+            {% for image in features.hemisphere_images %}
+    
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="{{ image }}" alt={{features.hemisphere_title}}>
+                </div>
+            </div>
+    
+            {% endfor %}
+        </span>
+    
+        <span class="row">
+            {% for title in features.hemisphere_title %}
+            <div class="col-md-3">
+                <h4 class="caption"> {{ title }} </h4>
+            </div>
+            {% endfor %}
+        </span>
+    
+    </div>
 </body>
 
 </html>
